@@ -16,7 +16,9 @@
     "@mui/icons-material": "^9.2.0",
     "@mui/material": "^9.2.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-mobile-app-button": "^1.2.19",
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
