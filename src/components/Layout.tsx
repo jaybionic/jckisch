@@ -35,25 +35,37 @@ function Layout() {
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-            <Typography
-              variant="h6"
-              component={RouterLink}
-              to="/"
-              sx={{ fontWeight: 700, color: 'text.primary', textDecoration: 'none' }}
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ alignItems: 'center' }}
             >
-              Jason Kisch
-            </Typography>
+              <img src="/images/favicon.jpg" height={40} alt="JK" />
+              <Typography
+                variant="h6"
+                component={RouterLink}
+                to="/"
+                sx={{ fontWeight: 700, color: 'text.primary', textDecoration: 'none' }}
+              >
+                Jason Kisch
+              </Typography>
+            </Stack>
             <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
               <Tooltip title={mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}>
                 <IconButton onClick={toggleColorMode} aria-label="Toggle color mode" color="inherit">
                   {mode === 'light' ? <DarkModeIcon fontSize="small" /> : <LightModeIcon fontSize="small" />}
                 </IconButton>
               </Tooltip>
-              <Button variant="outlined" href={`mailto:${CONTACT_EMAIL}`} startIcon={<DescriptionIcon />}>
+              <Button
+                variant="outlined"
+                href="/Jason-Kisch-Resume-2026.pdf"
+                download="Jason-Kisch-Resume-2026.pdf"
+                startIcon={<DescriptionIcon />}
+              >
                 Résumé
               </Button>
               <Button variant="outlined" href={`mailto:${CONTACT_EMAIL}`} startIcon={<EmailIcon />}>
-                Get in touch
+                Contact
               </Button>
             </Stack>
           </Toolbar>
@@ -75,7 +87,11 @@ function Layout() {
               © {new Date().getFullYear()} Jason Kisch. All rights reserved.
             </Typography>
             <Stack direction="row" spacing={1}>
-              <IconButton href={`mailto:${CONTACT_EMAIL}`} aria-label="Resume">
+              <IconButton
+                href="/Jason-Kisch-Resume-2026.pdf"
+                download="Jason-Kisch-Resume-2026.pdf"
+                aria-label="Resume"
+              >
                 <DescriptionIcon fontSize="small" />
               </IconButton>
               <IconButton href={`mailto:${CONTACT_EMAIL}`} aria-label="Email">

@@ -2,7 +2,7 @@ import { createTheme, type PaletteMode } from '@mui/material/styles';
 
 const DEFAULT_PRIMARY: Record<PaletteMode, string> = {
   light: '#050f41',
-  dark: '#6d9bc3 ',
+  dark: '#6d9bc3',
 };
 
 export function getTheme(mode: PaletteMode, primaryMain?: string) {
