@@ -12,8 +12,8 @@ export const projects: Project[] = [
   {
     slug: 'adobe-fonts',
     title: 'Adobe Fonts',
-    tagline: 'Lead prototyper and technologist for the Adobe Fonts team.',
-    year: '2022-2026',
+    tagline: 'Lead prototyper and technologist for the Adobe Fonts team',
+    year: '2022-PRESENT',
     role: 'Senior Frontend Developer & Prototyper',
     color: 'linear-gradient(135deg, #EB1000 0%, #711b0b 100%)',
   },
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     slug: 'amazon-devices',
     title: 'Amazon Devices',
-    tagline: 'UX prototyping across Fire TV, Fire Tablet, and Echo devices',
+    tagline: 'UX prototyping across Echo, Fire TV, and Fire Tablet devices',
     year: '2016–2018',
     role: 'UX Design Technologist',
     color: 'linear-gradient(135deg, #05A0D1 0%, #232F3E 100%)',
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     slug: 'xbox',
     title: 'Xbox One Launch Event',
-    tagline: 'A 3-hour takeover of 15 large-format displays in Times Square for the Xbox One launch event.',
+    tagline: 'A 3-hour takeover of 15 large-format displays in Times Square for the Xbox One launch event',
     year: '2013',
     role: 'Lead Developer',
     color: 'linear-gradient(135deg, #0e7a0d 0%, #006600 100%)',

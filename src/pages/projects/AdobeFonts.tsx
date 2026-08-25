@@ -6,84 +6,103 @@ import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import ProjectHeader from '../../components/ProjectHeader';
-import ImageGallery from '../../components/ImageGallery';
-import { getProjectBySlug } from '../../data/projects';
+import {getProjectBySlug} from '../../data/projects';
 import NotFound from '../NotFound';
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const project = getProjectBySlug('adobe-fonts');
 
 const tags = ['React', 'TypeScript', 'WebComponents', 'Vite', 'Docker', 'Python', 'FastAPI', 'OpenCV', 'LLM integration'];
 
-const sections = [
-  {
-    title: 'Labs',
-    description: ['I built...'],
-    gallery: [] as string[],
-  },
-  {
-    title: 'OpenType features',
-    description: ['I built...'],
-    gallery: [] as string[],
-  },
-  {
-    title: 'Copy space detection',
-    description: ['I built...'],
-    gallery: [] as string[],
-  },
-  {
-    title: 'Prototyping tools',
-    description: ['I built...'],
-    gallery: [] as string[],
-  },
-];
-
-const links = [
-  { label: 'Live demo', href: '#' },
-  { label: 'Source', href: '#' },
-];
 
 function AdobeFonts() {
   if (!project) {
-    return <NotFound />;
+    return <NotFound/>;
   }
 
   return (
     <>
-      <ProjectHeader project={project} />
-      <Container maxWidth="md" sx={{ pb: 6 }}>
-        <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap', mb: 4 }}>
+      <ProjectHeader project={project}/>
+      <Container maxWidth="md" sx={{pb: 6}}>
+        <Stack direction="row" spacing={1} useFlexGap sx={{flexWrap: 'wrap', mb: 4}}>
           {tags.map((tag) => (
-            <Chip key={tag} label={tag} />
+            <Chip key={tag} label={tag}/>
           ))}
         </Stack>
 
-        <Divider sx={{ mb: 4 }} />
-
-        <Stack direction="row" spacing={2} useFlexGap sx={{ flexWrap: 'wrap', alignItems: 'center', mb: 5 }}>
-          {links.map((link) => (
-            <Button key={link.label} variant="contained" href={link.href} target="_blank" rel="noopener">
-              {link.label}
-            </Button>
-          ))}
-        </Stack>
+        <Divider sx={{mb: 4}}/>
 
         <Stack spacing={5}>
-          {sections.map((section, index) => (
-            <Box key={section.title}>
-              {index > 0 && <Divider sx={{ mb: 5 }} />}
-              <Typography variant="h5" component="h2" gutterBottom sx={{ color: 'primary.main' }}>
-                {section.title}
+          <Box>
+            <Typography variant="h5" component="h2" gutterBottom sx={{color: 'primary.main'}}>
+              Glyph Finder
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              A single-page tool that helps you find which of Adobe's fonts actually support a specific glyph? Users
+              type any character (or a raw Unicode code point via a dedicated U+____ field) and get a grid of result
+              cards, each drawing that requested character in the font's own style with a deep link to its family page.
+              A "try these" strip samples ~14 glyphs (with shuffle), and searches are deep-linkable and shareable.
+            </Typography>
+            <Box sx={{ml: 6, mt: 2}}>
+              <Typography variant="body2" color="text.secondary">
+                <li>Unicode-range match client: capped at 500 fonts</li>
+                <li>Client-side "tofu" detection: cards for fonts that claim support but render an empty box are removed, filtering false positives.</li>
+                <li>Live glyph rendering</li>
+                <li>Deep-linking</li>
               </Typography>
-              <Stack spacing={2} sx={{ mb: section.gallery.length ? 3 : 0 }}>
-                {section.description.map((paragraph) => (
-                  <Typography key={paragraph} variant="body1" color="text.secondary">
-                    {paragraph}
-                  </Typography>
-                ))}
-              </Stack>
-              {section.gallery.length > 0 && <ImageGallery images={section.gallery} />}
             </Box>
-          ))}
+
+            <Button
+              variant="contained"
+              href="https://labs.fonts.adobe.com/projects/glyph-finder"
+              target="_blank"
+              rel="noopener"
+              startIcon={<OpenInNewIcon/>}
+              sx={{mt: 4}}
+            >
+              Glyph Finder
+            </Button>
+          </Box>
+
+          <Box
+            component="img"
+            src={'/images/adobe/labs/glyph-finder.png'}
+            alt=""
+            sx={{width: '100%', objectFit: 'cover', borderRadius: 1}}
+          />
+        </Stack>
+
+        <Stack spacing={5} sx={{mt: 8}}>
+          <Box>
+            <Typography variant="h5" component="h2" gutterBottom sx={{color: 'primary.main'}}>
+              Project Apex
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Apex lets you navigate through Adobe's font library by visual similarity. Adobe Research ML maps every
+              font into a similarity space flattened to a 2D grid. Related typefaces sit next to each other and the font
+              changes continuously as you move via a joystick. A minimap shows your location, undo/redo retraces your
+              path, and the font name deep-links to its family page.
+            </Typography>
+            <Box sx={{ml: 6, mt: 2}}>
+              <Typography variant="body2" color="text.secondary">
+                <li>Predictive, speed-scaled font prefetching</li>
+                <li>Font-space as a toroidal sparse grid</li>
+                <li>Glyph-subsetted font loading</li>
+                <li>GSAP joystick engine with inertia/throw physics</li>
+              </Typography>
+            </Box>
+
+            <Button
+              variant="contained"
+              href="https://labs.fonts.adobe.com/projects/glyph-finder"
+              target="_blank"
+              rel="noopener"
+              startIcon={<OpenInNewIcon/>}
+              sx={{mt: 4}}
+            >
+              Project Apex
+            </Button>
+          </Box>
         </Stack>
       </Container>
     </>
