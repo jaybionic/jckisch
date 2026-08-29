@@ -14,6 +14,7 @@ const project = getProjectBySlug('adobe-fonts');
 
 const tags = ['React', 'TypeScript', 'WebComponents', 'Vite', 'Docker', 'Python', 'FastAPI', 'OpenCV', 'LLM integration'];
 
+//https://helpx.adobe.com/firefly/web/create-mood-boards/firefly-boards/generative-text-edit.html
 
 function AdobeFonts() {
   if (!project) {
@@ -68,7 +69,7 @@ function AdobeFonts() {
             component="img"
             src={'/images/adobe/labs/glyph-finder.png'}
             alt=""
-            sx={{width: '100%', objectFit: 'cover', borderRadius: 1}}
+            sx={{width: '100%', objectFit: 'cover', borderRadius: 1, border: "2px solid #CCC"}}
           />
         </Stack>
 
@@ -103,6 +104,12 @@ function AdobeFonts() {
               Project Apex
             </Button>
           </Box>
+          <Box
+            component="img"
+            src={'/images/adobe/labs/apex-new.png'}
+            alt=""
+            sx={{width: '100%', objectFit: 'cover', borderRadius: 1, border: "2px solid #CCC"}}
+          />
         </Stack>
       </Container>
     </>

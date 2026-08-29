@@ -31,7 +31,7 @@ const fireTvDescription = [
 const fireTvImage = '/images/amazon/amzn-firetv.png';
 
 const fireTabletDescription = [
-  'I designed and built the "For You" carousel that replaced the old Recents rail with a more personalized surface, and prototyped early explorations of Alexa on a touch-first device.',
+  'I developed the "For You" carousel that replaced the old Recents rail with a more personalized surface, and prototyped early explorations of Alexa on a touch-first device.',
 ];
 
 const fireTabletGrid = [

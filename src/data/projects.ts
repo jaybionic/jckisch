@@ -16,6 +16,7 @@ export const projects: Project[] = [
     year: '2022-PRESENT',
     role: 'Senior Frontend Developer & Prototyper',
     color: 'linear-gradient(135deg, #EB1000 0%, #711b0b 100%)',
+    image: '/images/adobe/adobe-banner.png',
   },
   {
     slug: 'pagliacci',
